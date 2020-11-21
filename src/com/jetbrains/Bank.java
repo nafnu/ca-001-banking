@@ -12,7 +12,7 @@ public class Bank {
 
 
         boolean exit = false;
-        int option = 0;
+        int option;
 
         do {
             option = MainMenu();
