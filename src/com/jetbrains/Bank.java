@@ -4,52 +4,47 @@ import java.util.Scanner;
 public class Bank {
 
     private static final Scanner kb = new Scanner(System.in);
-    private static String PinEmployee;
 
-    /*public static void GeneralOption()*/public static void main(String[] args){
+
+
+    /*public static void main(String[] args) { Testing coding*/
+    public Bank(){
+
+
         boolean exit = false;
         int option = 0;
 
-        while (!exit) {
+        do {
             option = MainMenu();
 
             switch (option) {
                 case 1:
-
+                    System.out.println("\nPlease enter the PIN for login as an employee:\t");
+                    break;
                 case 2:
-                    System.out.println("\nPlease enter the fallowing information requested.\t");
+                    System.out.println("\nPlease enter the following information requested.\t");
+                    break;
                 case 3:
-                    System.out.println("\nGood Bye\t");
+                    System.out.println("\nGood Bye!\t");
                     exit = true;
-                default :
-                    System.out.println("\nOnly numbers between 1 y 3\t");
+                    break;
+                default:
+                    System.out.println("Only numbers between 1 to 3 are the options available.");
             }
-        }
-      }
+        } while (!exit);
+    }
 
 
-    public static int MainMenu(){
+    public int MainMenu() {
 
         System.out.println("\n+++++++    MAIN MENU    +++++++\t");
         System.out.println("\nPlease select and enter the number of one of these options: \t");
         System.out.println("Option 1: I am a Bank Employee\t");
         System.out.println("Option 2: I am a Customer\t");
         System.out.println("Option 3: Exit program\t");
-        System.out.println("");
         return kb.nextInt();
     }
 
-
-    CASE 1
-    System.out.println("\nPlease enter the PIN for login as employee:\t");
-    PinEmployee = kb.next();
-    String PinEmployeeConstant = "A1234";
-
-    boolean compare = true;
-
-                    do {
-        System.out.println("\nPlease enter the PIN for login as employee:\t");
-    } while (!!PinEmployee.equals(PinEmployeeConstant));
 }
 
 

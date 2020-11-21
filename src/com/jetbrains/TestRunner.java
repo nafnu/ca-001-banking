@@ -1,9 +1,14 @@
 package com.jetbrains;
-import java.util.Scanner;
+
 
 public class TestRunner {
 
-    public static void Run() {
+    public void Run() {
+        new Bank();
 
     }
+
+
+
+
 }
