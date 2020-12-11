@@ -1,28 +1,25 @@
 package com.jetbrains;
-import java.util.Scanner;
 
 public class Bank {
 
-    private static final Scanner kb = new Scanner(System.in);
 
-
-
-    /*public static void main(String[] args) { Testing coding*/
     public Bank(){
 
-
+        int userChoice;
         boolean exit = false;
-        int option;
+
 
         do {
-            option = MainMenu();
+            userChoice = MenuBuilder.MainMenu();
 
-            switch (option) {
+            switch (userChoice) {
                 case 1:
                     System.out.println("\nPlease enter the PIN for login as an employee:\t");
                     break;
                 case 2:
                     System.out.println("\nPlease enter the following information requested.\t");
+                    Customer work =  new Customer();
+                    work.Pin();
 
                     break;
                 case 3:
@@ -35,16 +32,6 @@ public class Bank {
         } while (!exit);
     }
 
-
-    public int MainMenu() {
-
-        System.out.println("\n+++++++    MAIN MENU    +++++++\t");
-        System.out.println("\nPlease select and enter the number of one of these options: \t");
-        System.out.println("Option 1: I am a Bank Employee\t");
-        System.out.println("Option 2: I am a Customer\t");
-        System.out.println("Option 3: Exit program\t");
-        return kb.nextInt();
-    }
 
 }
 

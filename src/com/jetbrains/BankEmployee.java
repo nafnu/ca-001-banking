@@ -3,7 +3,7 @@ package com.jetbrains;
 import java.util.Scanner;
 
 public class BankEmployee extends Bank {
-
+/*
     static Scanner mp= new Scanner(System.in);
 
 
@@ -87,4 +87,5 @@ public class BankEmployee extends Bank {
         }
 
      */
+}
 
