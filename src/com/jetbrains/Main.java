@@ -6,7 +6,5 @@ public class Main {
         TestRunner testRunner = new TestRunner();
         testRunner.Run();
 
-        Customer work =  new Customer();
-        work.Pin();
-    }
+        }
 }

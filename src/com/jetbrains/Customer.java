@@ -4,33 +4,76 @@ import java.util.Scanner;
 
 public class Customer extends Bank{
 
-    private static char ch1;
-    private static char ch2;
     public static String name;
     public static String surname;
+    public static String accountToReview;
+    public static String pinToReview;
+    public static char ch1;
+    public static char ch2;
 
-    public static void Pin() {
+    public Customer(String _name, String _surname) {
+       name = _name;
+       surname = _surname;
 
-        Scanner kb = new Scanner(System.in);
+    }
+
+
+    public static Customer AddCustomerForm() {
+
+        Scanner info = new Scanner(System.in);
 
         System.out.print("\nPlease enter the first name\t");
-        name = kb.next().toLowerCase() + kb.nextLine();
+        name = info.next().toLowerCase() + info.nextLine();
 
         System.out.print("Please enter the last name\t");
-        surname = kb.next().toLowerCase() + kb.nextLine();
+        surname = info.next().toLowerCase() + info.nextLine();
+
+        System.out.print("Please enter your account number \t");
+        accountToReview = info.next().toLowerCase() + info.nextLine();
+
+        System.out.print("Please enter your PIN \t");
+        pinToReview = info.next().toLowerCase() + info.nextLine();
 
         ch1 = name.charAt(0);
         ch2 = surname.charAt(0);
 
+
+        // You might validate here..
+
+        Customer customer = new Customer (name, surname);
+        // And if happy /// create the customer
+
+        return customer;
+
+    }
+
+
+    public static String reviewInfo( String validInfo){
+
+
+        pinToReview.equals(pinCode());
+
+
+
+        return validInfo;
+    }
+
+
+    public static String pinCode(){
+
+        String orderInAlphabet1 = NameOdInAl(name);
+        String orderInAlphabet = SurOdInAl(surname);
+
+        return (orderInAlphabet1+orderInAlphabet);
+    }
+
+
+    public static int sumLength(){
+
         int l1 = name.length();
         int l2 = surname.length();
-        int l3 = l1 + l2;
 
-        String orderInAlphabet = SurOdInAl(surname);
-        String orderInAlphabet1 = NameOdInAl(name);
-
-        System.out.println("\nThe account is:  " + ch1 + ch2 + "-" + l3 + "-" + orderInAlphabet1+ "-" + orderInAlphabet);
-
+        return (l1 + l2);
     }
 
 

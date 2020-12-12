@@ -31,19 +31,19 @@ public class BankEmployee extends Bank {
                 System.out.println("\n one\t");
                 break;
             case 2:
-                System.out.println("\ntwo\t");
+                System.out.println("\n two\t");
                 break;
             case 3:
-                System.out.println("\nthree\t");
+                System.out.println("\n three\t");
                 break;
             case 4:
-                System.out.println("\nfour\t");
+                System.out.println("\n four\t");
                 break;
             case 5:
-                System.out.println("\nfive\t");
+                System.out.println("\n five\t");
                 break;
             case 6:
-                System.out.println("\nsix\t");
+                System.out.println("\n six\t");
                 break;
             case 7:
                 System.out.println("\nGood Bye!\t");
@@ -55,17 +55,6 @@ public class BankEmployee extends Bank {
     } while(!exit);
 
 
-    public static int Options() {
-        System.out.println("----------  Options: ------------");
-        System.out.println("\n1. Create new customer \t");
-        System.out.println("2. Delete customer ");
-        System.out.println("3. Manage transactions of the customer ");
-        System.out.println("4. Generate customer lists ");
-        System.out.println("5. Review the general portfolio of all customers ");
-        System.out.println("6. Return to the general menu");
-        System.out.println("7. Quit ");
-        int OP = mp.nextInt();
-        return OP;
     }
 
 }

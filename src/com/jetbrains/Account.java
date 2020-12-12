@@ -1,4 +1,4 @@
 package com.jetbrains;
 
-public class Account {
+public abstract class Account {
 }
