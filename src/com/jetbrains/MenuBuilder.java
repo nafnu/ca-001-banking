@@ -1,6 +1,5 @@
 package com.jetbrains;
 import java.util.Scanner;
-import static com.jetbrains.AppConstants.CUSTOMER_CREATE;
 
 public class MenuBuilder {
 

@@ -32,13 +32,15 @@ public class Customer extends Bank{
         accountToReview = info.next().toLowerCase() + info.nextLine();
 
         System.out.print("Please enter your PIN \t");
-        pinToReview = info.next().toLowerCase() + info.nextLine();
+        pinToReview = info.next();
 
         ch1 = name.charAt(0);
         ch2 = surname.charAt(0);
 
 
         // You might validate here..
+        SecurityCustomer.reviewLoginCustomer();
+
 
         Customer customer = new Customer (name, surname);
         // And if happy /// create the customer
@@ -48,15 +50,12 @@ public class Customer extends Bank{
     }
 
 
-    public static String reviewInfo( String validInfo){
+  /*  public static String reviewInfo( String validInfo){
 
-
-        pinToReview.equals(pinCode());
-
-
+        SecurityCustomer.reviewLoginCustomer();
 
         return validInfo;
-    }
+    }*/
 
 
     public static String pinCode(){
