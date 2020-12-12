@@ -10,6 +10,7 @@ public class Customer extends Bank{
     public static String pinToReview;
     public static char ch1;
     public static char ch2;
+    public static Scanner info = new Scanner(System.in);
 
     public Customer(String _name, String _surname) {
        name = _name;
@@ -20,7 +21,6 @@ public class Customer extends Bank{
 
     public static Customer AddCustomerForm() {
 
-        Scanner info = new Scanner(System.in);
 
         System.out.print("\nPlease enter the first name\t");
         name = info.next().toLowerCase() + info.nextLine();
@@ -49,13 +49,6 @@ public class Customer extends Bank{
 
     }
 
-
-  /*  public static String reviewInfo( String validInfo){
-
-        SecurityCustomer.reviewLoginCustomer();
-
-        return validInfo;
-    }*/
 
 
     public static String pinCode(){

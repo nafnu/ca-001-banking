@@ -1,6 +1,9 @@
 package com.jetbrains;
+import java.util.Scanner;
 
 public class Bank {
+
+    //public static Scanner info = new Scanner(System.in);
 
 
     public Bank(){
@@ -8,13 +11,13 @@ public class Bank {
         int userChoice;
         boolean exit = false;
 
-
         do {
             userChoice = MenuBuilder.MainMenu();
 
             switch (userChoice) {
                 case 1:
-                    System.out.println("\nPlease enter the PIN for login as an employee:\t");
+                    System.out.println("\nPlease enter the following information requested. \t");
+                    BankEmployee.AddEmployeeForm();
                     break;
                 case 2:
                     System.out.println("\nPlease enter the following information requested.\t");

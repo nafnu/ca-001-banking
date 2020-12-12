@@ -1,13 +1,6 @@
 package com.jetbrains;
-import java.util.Scanner;
 
 public abstract class SecurityCustomer extends Security implements loginCustomer {
-
-    public static Scanner sc = new Scanner(System.in);  // Create a Scanner object
-
-    public static String pinSystem = Customer.pinCode();
-    public static String cancel = "*";
-    public static String pinCompare;
 
     public static void reviewLoginCustomer() {
         boolean exit = false;
@@ -15,8 +8,6 @@ public abstract class SecurityCustomer extends Security implements loginCustomer
 
         do {
             System.out.println("\n.....Analyzing info.......\n");
-
-            pinCompare = Customer.pinToReview;
 
             if (pinCompare.equals(pinSystem))
                 switchCase = 1;
@@ -26,9 +17,9 @@ public abstract class SecurityCustomer extends Security implements loginCustomer
             switch (switchCase) {
 
                 case 1:
-                    System.out.println("\nYour PIN number is correct \t");
-                    System.out.println("\nPlease wait a moment to display customers´ menu \t");
+                    System.out.println("\nYour PIN number is correct \n");
                     exit = true;
+                    MenuBuilder.CustomerMenu();
                     break;
                 case 2:
                     System.out.println("\nYour PIN number is Incorrect \t");

@@ -15,30 +15,30 @@ public class MenuBuilder {
         return selection;
     }
 
-    public int EmployeeMenu() {   //bankingMenu
+    public static int EmployeeMenu() {   //bankingMenu
         int selectionE;
         Scanner kbE = new Scanner(System.in);
-        System.out.println("---------- Employees´ Options: ------------");
+        System.out.println("\n---------- Employees´ Options: ------------\t");
         System.out.println("\n1. Create new customer \t");
-        System.out.println("2. Delete customer ");
-        System.out.println("3. Generate customer lists ");
-        System.out.println("4. Create new account");
-        System.out.println("5. Delete new account");
-        System.out.println("6. Return to the general menu");
-        System.out.println("7. Quit ");
+        System.out.println("2. Delete customer \t");
+        System.out.println("3. Generate customer lists \t");
+        System.out.println("4. Create new account \t");
+        System.out.println("5. Delete new account \t");
+        System.out.println("6. Return to the general menu \t");
+        System.out.println("7. Quit \t");
         selectionE = kbE.nextInt();
         return selectionE;
     }
 
-       public int CustomerMenu() {
+       public static int CustomerMenu() {
         int selectionC;
         Scanner kbC = new Scanner(System.in);
-        System.out.println("---------- Customers´ Transactions: ------------");
+        System.out.println("\n---------- Customers´ Transactions: ------------ \t");
         System.out.println("\n1 Lodge Money \t");
-        System.out.println("2. Withdraw Money ");
-        System.out.println("3. Balance current account "); //ReadAccount-FileService
-        System.out.println("4. Return to the general menu");
-        System.out.println("5. Quit ");
+        System.out.println("2. Withdraw Money \t");
+        System.out.println("3. Balance current account \t"); //ReadAccount-FileService
+        System.out.println("4. Return to the general menu \t");
+        System.out.println("5. Quit \t");
         selectionC = kbC.nextInt();
         return selectionC;
     }
