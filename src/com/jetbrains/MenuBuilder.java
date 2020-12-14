@@ -24,7 +24,7 @@ public class MenuBuilder {
         System.out.println("3. Generate customer lists \t");
         System.out.println("4. Create new account \t");
         System.out.println("5. Delete new account \t");
-        System.out.println("6. Return to the general menu \t");
+        System.out.println("6. Return to the Main Menu \t");
         System.out.println("7. Quit \t");
         selectionE = kbE.nextInt();
         return selectionE;
@@ -37,7 +37,7 @@ public class MenuBuilder {
         System.out.println("\n1 Lodge Money \t");
         System.out.println("2. Withdraw Money \t");
         System.out.println("3. Balance current account \t"); //ReadAccount-FileService
-        System.out.println("4. Return to the general menu \t");
+        System.out.println("4. Return to the Main Menu \t");
         System.out.println("5. Quit \t");
         selectionC = kbC.nextInt();
         return selectionC;

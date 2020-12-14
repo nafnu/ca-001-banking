@@ -1,34 +1,43 @@
 package com.jetbrains;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BankEmployee extends Bank {
 
     public static Scanner infoE = new Scanner(System.in);
     public static String pinEmp;
+    public static String nameEmp;
 
 
-    public BankEmployee (String _pin) {
-            this.pinEmp = _pin;
-    }
 
-    public static BankEmployee AddEmployeeForm(){
+    public static String AddEmployeeForm(){
 
-        System.out.print("\nPIN for login as employee: \t");
-        System.out.print("\n-Or type * to return to the main menu- \t");
+        System.out.print("\nType PIN for login as employee: \t");
         pinEmp = infoE.next();
 
+         // You might validate here..
         SecurityEmployee.reviewLoginEmployee();
 
-        BankEmployee bankEmployee = new BankEmployee (pinEmp);
+        return pinEmp;
+    }
 
-        // You might validate here..
+    public void setNameEmp(String nameEmp) {
+        this.nameEmp = nameEmp;
+    }
 
-        return bankEmployee;
+    public static String getNameEmp(){
+        return nameEmp;
+    }
+
+    public void setPinEmp(String pinEmp) {
+        this.pinEmp = pinEmp;
     }
 
     public static String getPinEmp(){
         return pinEmp;
     }
+
 
 }
 

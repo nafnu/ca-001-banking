@@ -8,11 +8,9 @@ public abstract class Security {
 
     public static Scanner sc = new Scanner(System.in);  // Create a Scanner object
 
-    public static String pinSystem = Customer.pinCode();
     public static String cancel = "*";
-    public static String pinCompare = pinToReview;
 
-    public static String pinEmp = BankEmployee.getPinEmp();
+
     public static boolean exit = false;
 
 }

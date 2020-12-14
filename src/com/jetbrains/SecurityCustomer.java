@@ -1,4 +1,5 @@
 package com.jetbrains;
+import static com.jetbrains.Customer.pinToReview;
 
 public abstract class SecurityCustomer extends Security implements loginCustomer {
 
@@ -9,7 +10,7 @@ public abstract class SecurityCustomer extends Security implements loginCustomer
         do {
             System.out.println("\n.....Analyzing info.......\n");
 
-            if (pinCompare.equals(pinSystem))
+            if (pinToReview.equals(Customer.pinCode()))
                 switchCase = 1;
             else
                 switchCase = 2;
@@ -24,9 +25,13 @@ public abstract class SecurityCustomer extends Security implements loginCustomer
                 case 2:
                     System.out.println("\nYour PIN number is Incorrect \t");
                     System.out.println("Please type your valid PIN number \t");
-                    System.out.println("OR for return to Main menu press * \t");
+                    System.out.println("Return to MAIN MENU PRESS * \t");
                     String cancelCustomer = sc.next();
-                    exit = (cancelCustomer.equals(cancel) || cancelCustomer.equals(pinSystem));
+                    if ((cancelCustomer.equals(cancel)) || (cancelCustomer.equals(Customer.pinCode()))){
+                        MenuBuilder.MainMenu();
+                        exit = true;
+                    }else
+                    exit = false;
                     break;
             }
 

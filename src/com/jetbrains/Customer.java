@@ -7,15 +7,17 @@ public class Customer extends Bank{
     public static String name;
     public static String surname;
     public static String accountToReview;
+    public static String email;
     public static String pinToReview;
     public static char ch1;
     public static char ch2;
     public static Scanner info = new Scanner(System.in);
 
-    public Customer(String _name, String _surname) {
-       name = _name;
-       surname = _surname;
 
+    public Customer() {
+       this.name = name;
+       this.surname = surname;
+       this.email = email;
     }
 
 
@@ -42,13 +44,43 @@ public class Customer extends Bank{
         SecurityCustomer.reviewLoginCustomer();
 
 
-        Customer customer = new Customer (name, surname);
+        Customer customer = new Customer ();
         // And if happy /// create the customer
 
         return customer;
 
     }
+    public String getName() {
+        return name;
+    }
 
+    public String setName(String name) {
+        return this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    /*public String getAccountToReview() {
+        return accountToReview;
+    }
+
+    public void setAccountToReview(Account accountToReview) {
+        this.accountToReview = accountToReview;
+    }*/
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
 
     public static String pinCode(){
