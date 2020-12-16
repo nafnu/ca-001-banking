@@ -22,10 +22,8 @@ public class MenuBuilder {
         System.out.println("\n1. Create new customer \t");
         System.out.println("2. Delete customer \t");
         System.out.println("3. Generate customer lists \t");
-        System.out.println("4. Create new account \t");
-        System.out.println("5. Delete new account \t");
-        System.out.println("6. Return to the Main Menu \t");
-        System.out.println("7. Quit \t");
+        System.out.println("4. Return to the Main Menu \t");
+        System.out.println("5. Quit \t");
         selectionE = kbE.nextInt();
         return selectionE;
     }

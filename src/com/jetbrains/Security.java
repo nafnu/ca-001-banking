@@ -11,6 +11,6 @@ public abstract class Security {
     public static String cancel = "*";
 
 
-    public static boolean exit = false;
+    public  abstract  boolean reviewLoginEmployee(String pinEmp);
 
 }

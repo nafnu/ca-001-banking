@@ -1,8 +1,8 @@
 package com.jetbrains;
 
-public abstract class SecurityEmployee extends Security implements loginEmployee {
+public class SecurityEmployee extends Security {
 
-    public static void reviewLoginEmployee(){
+    public static boolean reviewLoginEmployee(){
         boolean exit = false;
         int switchCaseE;
 
@@ -20,7 +20,6 @@ public abstract class SecurityEmployee extends Security implements loginEmployee
                 case 1:
                     System.out.println("\nYour Employee PIN is correct \n");
                     exit = true;
-                    MenuBuilder.EmployeeMenu();
                     break;
                 case 2:
                     System.out.println("\nYour Employee PIN number is Incorrect \t");
@@ -36,12 +35,14 @@ public abstract class SecurityEmployee extends Security implements loginEmployee
             }
 
             } while(!exit);
+        return false;
         }
 
-    }
-
-interface loginEmployee{
-    static void reviewLoginEmployee() {
-
+    @Override
+    public boolean reviewLoginEmployee(String pinEmp) {
+        return true;
     }
 }
+
+
+

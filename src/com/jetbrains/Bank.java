@@ -17,7 +17,8 @@ public class Bank {
             switch (userChoice) {
                 case 1:
                     System.out.println("\nPlease enter the following information requested. \t");
-                    BankEmployee.AddEmployeeForm();
+                    SecurityEmployee.reviewLoginEmployee();
+                    MenuBuilder.EmployeeMenu();
                     break;
                 case 2:
                     System.out.println("\nPlease enter the following information requested.\t");

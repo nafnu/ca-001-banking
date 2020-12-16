@@ -1,7 +1,17 @@
 package com.jetbrains;
 import static com.jetbrains.Customer.pinToReview;
 
-public abstract class SecurityCustomer extends Security implements loginCustomer {
+public class SecurityCustomer extends Security {
+
+
+    public boolean login(String pinNumber) {
+        return false;
+    }
+
+    public boolean getCredentials(String name, String surname, String accountNumber) {
+
+        return false;
+    }
 
     public static void reviewLoginCustomer() {
         boolean exit = false;
@@ -38,13 +48,14 @@ public abstract class SecurityCustomer extends Security implements loginCustomer
 
         } while (!exit);
     }
+
+    @Override
+    public boolean reviewLoginEmployee(String pinEmp) {
+        return false;
+    }
 }
 
-    interface loginCustomer{
-        static void reviewLoginCustomer() {
 
-        }
-    }
 
 
 

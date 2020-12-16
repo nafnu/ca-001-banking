@@ -4,34 +4,30 @@ import java.util.Scanner;
 
 public class Customer extends Bank{
 
-    public static String name;
-    public static String surname;
-    public static String accountToReview;
-    public static String email;
-    public static String pinToReview;
-    public static char ch1;
-    public static char ch2;
+    public static String name, surname, accountNumber, email, pinToReview;
+    public static char ch1, ch2;
     public static Scanner info = new Scanner(System.in);
 
+    public Customer(String _name, String _surname, String _email) {
+        name = _name;
+        surname = _surname;
+        email = _email;
+        accountNumber = pinValidation(false);
+        pinToReview = pinValidation(true);
 
-    public Customer() {
-       this.name = name;
-       this.surname = surname;
-       this.email = email;
     }
 
-
-    public static Customer AddCustomerForm() {
+    public static String AddCustomerForm() {
 
 
         System.out.print("\nPlease enter the first name\t");
-        name = info.next().toLowerCase() + info.nextLine();
+        name = info.next().toLowerCase();
 
         System.out.print("Please enter the last name\t");
-        surname = info.next().toLowerCase() + info.nextLine();
+        surname = info.next().toLowerCase();
 
         System.out.print("Please enter your account number \t");
-        accountToReview = info.next().toLowerCase() + info.nextLine();
+        accountNumber = info.next().toLowerCase() + info.nextLine();
 
         System.out.print("Please enter your PIN \t");
         pinToReview = info.next();
@@ -44,34 +40,63 @@ public class Customer extends Bank{
         SecurityCustomer.reviewLoginCustomer();
 
 
-        Customer customer = new Customer ();
+        //Customer customer = new Customer();
         // And if happy /// create the customer
 
-        return customer;
+        return name+surname+accountNumber+pinToReview;
 
     }
+
+    private String pinValidation(boolean _pin) {
+        int iFirst = 1, iLast = 1;
+
+        char[] letterArray = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+                'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+        System.out.println();
+        for (int i = 0; i < letterArray.length; i++) {
+            if (Character.toLowerCase(name.charAt(0)) == letterArray[i]) {
+                iFirst += i;
+            }
+            if (Character.toLowerCase(surname.charAt(0)) == letterArray[i]) {
+                iLast += i;
+            }
+
+        }
+
+        if (!_pin) {
+            return String.format("%c%c-%s-%02d-%02d", Character.toLowerCase(name.charAt(0)), Character.toLowerCase(surname.charAt(0)),
+                    (name.length() + surname.length()), iFirst, iLast);
+        } else {
+            return String.format("%02d%02d", iFirst, iLast);
+        }
+
+    }
+
+
+    public String setName(String name) {
+        return this.name = name;
+    }
+
     public String getName() {
         return name;
     }
 
-    public String setName(String name) {
-        return this.name = name;
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    /*public String getAccount() {
+        return account;
     }
 
-    /*public String getAccountToReview() {
-        return accountToReview;
-    }
-
-    public void setAccountToReview(Account accountToReview) {
-        this.accountToReview = accountToReview;
+    public void setAccount(Account account) {
+        this.account = account;
     }*/
 
     public String getEmail() {
@@ -82,7 +107,6 @@ public class Customer extends Bank{
         this.email = email;
     }
 
-
     public static String pinCode(){
 
         String orderInAlphabet1 = NameOdInAl(name);
@@ -91,21 +115,34 @@ public class Customer extends Bank{
         return (orderInAlphabet1+orderInAlphabet);
     }
 
-
     public static int sumLength(){
-
         int l1 = name.length();
         int l2 = surname.length();
-
         return (l1 + l2);
+    }
+
+    public static String getInitials(){
+        String initialsName = String.valueOf(ch1);
+        String initialsSurname = String.valueOf(ch2);
+        return initialsName+initialsSurname;
+    }
+
+    public static String getFirstPin(){
+        String firstPin = NameOdInAl(name);
+        return firstPin;
+    }
+
+    public static String getSecondPin(){
+        String secondPin = SurOdInAl(surname);
+        return secondPin;
     }
 
 
     public static String NameOdInAl(String m) {
         char [] orig =  {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-        String [] value =  {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26"};
+        String [] value =  {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"};
 
-        String od1 = new String(orig,0, 26);
+        String od1 = new String(orig,0, 27);
 
         char od2 = name.charAt(0);
 
@@ -118,9 +155,9 @@ public class Customer extends Bank{
 
     public static String SurOdInAl(String n) {
         char [] orig =  {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-        String [] value =  {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26"};
+        String [] value =  {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26", "27"};
 
-        String od1 = new String(orig,0, 26);
+        String od1 = new String(orig,0, 27);
 
         char od2 = surname.charAt(0);
 
