@@ -23,6 +23,7 @@ public class Bank {
                 case 2:
                     System.out.println("\nPlease enter the following information requested.\t");
                     Customer.AddCustomerForm();
+                    MenuBuilder.CustomerMenu();
                     break;
                 case 3:
                     System.out.println("\nGood Bye!\t");
@@ -33,6 +34,7 @@ public class Bank {
             }
         } while (!exit);
     }
+
 
 
 }

@@ -13,4 +13,5 @@ public abstract class Security {
 
     public  abstract  boolean reviewLoginEmployee(String pinEmp);
 
+    public abstract boolean reviewLoginCustomer(String pin);
 }

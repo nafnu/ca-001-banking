@@ -1,4 +1,4 @@
 package com.jetbrains;
 
-public class TransactionWithdraw {
+public class TransactionWithdraw extends Transactions{
 }

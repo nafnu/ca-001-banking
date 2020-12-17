@@ -24,7 +24,7 @@ public class SecurityEmployee extends Security {
                 case 2:
                     System.out.println("\nYour Employee PIN number is Incorrect \t");
                     System.out.println("Please type again your valid PIN number \t");
-                    System.out.println("OR for return to Main menu press * \t");
+                    System.out.println("OR for return to MAIN MENU press * \t");
                     String cancelE = sc.next();
                     if ((cancelE.equals(cancel)) || (BankEmployee.getPinEmp().equalsIgnoreCase("A1234"))){
                         MenuBuilder.MainMenu();
@@ -40,6 +40,11 @@ public class SecurityEmployee extends Security {
 
     @Override
     public boolean reviewLoginEmployee(String pinEmp) {
+        return false;
+    }
+
+    @Override
+    public boolean reviewLoginCustomer(String pinToReview) {
         return true;
     }
 }

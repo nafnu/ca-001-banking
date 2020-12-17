@@ -17,7 +17,7 @@ public class FileManager {
 
     public static void AddCustomerToFile(Customer customer) {
         OpenFileToWrite(CustomerFile);
-        output.format("%s %s %s %s %n",customer.name, customer.surname, customer.email, customer.accountNumber );
+        output.format("%s %s %s %s %n",customer.name, customer.surname, customer.email, customer.account );
         CloseFile();
 
     }

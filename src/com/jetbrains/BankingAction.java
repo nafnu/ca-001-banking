@@ -26,17 +26,12 @@ public class BankingAction {
         return customer.name + customer.surname+ "-" + fullName.length();
     }
 
-    public static void DeleteCustomer() {
-
-    }
 
     public static void CreateTransaction(Transactions transaction) {
         System.out.println("Creating Transaction......");
     }
 
-    public static void ListCustomers() {
 
-    }
 
     public static void ListTransactionHistory() {
 
@@ -48,5 +43,38 @@ public class BankingAction {
 
     public static void Withdraw() {
 
+    }
+
+
+    public static void listCustomers() {
+
+    }
+
+
+
+
+    private static  void DeleteCustomer() {
+
+
+    }
+
+    private static Transactions CreateTransactionLodgeForm() {
+
+        System.out.println("Transaction lodge form goes here");
+
+        TransactionLodge btl = new TransactionLodge();
+
+        return btl;
+    }
+
+
+
+    private static Transactions CreateTransactionWithdrawForm() {
+
+        System.out.println("Transaction withdraw form goes here");
+
+        TransactionWithdraw btl = new TransactionWithdraw();
+
+        return btl;
     }
 }

@@ -1,4 +1,4 @@
 package com.jetbrains;
 
-public abstract class Transactions {
+public class Transactions {
 }

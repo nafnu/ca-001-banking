@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Customer extends Bank{
 
-    public static String name, surname, accountNumber, email, pinToReview;
+    public static String name, surname, account, email, pin;
     public static char ch1, ch2;
     public static Scanner info = new Scanner(System.in);
 
@@ -12,38 +12,9 @@ public class Customer extends Bank{
         name = _name;
         surname = _surname;
         email = _email;
-        accountNumber = pinValidation(false);
-        pinToReview = pinValidation(true);
+        account = pinValidation(false);
+        pin = pinValidation(true);
 
-    }
-
-    public static String AddCustomerForm() {
-
-
-        System.out.print("\nPlease enter the first name\t");
-        name = info.next().toLowerCase();
-
-        System.out.print("Please enter the last name\t");
-        surname = info.next().toLowerCase();
-
-        System.out.print("Please enter your account number \t");
-        accountNumber = info.next().toLowerCase() + info.nextLine();
-
-        System.out.print("Please enter your PIN \t");
-        pinToReview = info.next();
-
-        ch1 = name.charAt(0);
-        ch2 = surname.charAt(0);
-
-
-        // You might validate here..
-        SecurityCustomer.reviewLoginCustomer();
-
-
-        //Customer customer = new Customer();
-        // And if happy /// create the customer
-
-        return name+surname+accountNumber+pinToReview;
 
     }
 
@@ -73,70 +44,48 @@ public class Customer extends Bank{
 
     }
 
+    public static Customer AddCustomerForm() {
 
-    public String setName(String name) {
-        return this.name = name;
+
+        System.out.print("\nPlease enter the first name\t");
+        name = info.next().toLowerCase();
+
+        System.out.print("Please enter the last name\t");
+        surname = info.next().toLowerCase();
+
+        System.out.print("Please enter your account number \t");
+        account = info.next().toLowerCase() + info.nextLine();
+
+        System.out.print("Please enter your email \t");
+        email = info.next().toLowerCase() + info.nextLine();
+
+        System.out.print("Please enter your PIN \t");
+        pin = info.next();
+
+        SecurityCustomer.reviewLoginCustomer();
+
+        Customer customer = new Customer(name,surname,email);
+        // And if happy /// create the customer
+
+        return customer;
+
     }
 
-    public String getName() {
-        return name;
-    }
-
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    /*public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }*/
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public static String pinCode(){
-
-        String orderInAlphabet1 = NameOdInAl(name);
-        String orderInAlphabet = SurOdInAl(surname);
-
-        return (orderInAlphabet1+orderInAlphabet);
-    }
 
     public static int sumLength(){
-        int l1 = name.length();
-        int l2 = surname.length();
-        return (l1 + l2);
+        int l1 = name.length()+surname.length();
+        return l1 ;
     }
 
     public static String getInitials(){
         String initialsName = String.valueOf(ch1);
         String initialsSurname = String.valueOf(ch2);
         return initialsName+initialsSurname;
-    }
 
-    public static String getFirstPin(){
-        String firstPin = NameOdInAl(name);
-        return firstPin;
-    }
 
-    public static String getSecondPin(){
-        String secondPin = SurOdInAl(surname);
-        return secondPin;
-    }
 
+
+/* My own old procedure to ge the pin number. It is inefficient because I do duplicate operations for the first and last name.
 
     public static String NameOdInAl(String m) {
         char [] orig =  {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
@@ -167,5 +116,7 @@ public class Customer extends Bank{
         }
         return n;
     }
+
+ */
 }
 
