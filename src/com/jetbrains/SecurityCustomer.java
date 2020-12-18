@@ -9,8 +9,11 @@ public class SecurityCustomer extends Security {
         return false;
     }
     public boolean login(String pinNumber) {
+
         return false;
     }
+
+    /* My procedure to review the pinCustomer
 
     public static boolean reviewLoginCustomer() {
         boolean exit = false;
@@ -55,7 +58,7 @@ public class SecurityCustomer extends Security {
     @Override
     public boolean reviewLoginCustomer(String pinToReview) {
         return true;
-    }
+    }*/
 }
 
 

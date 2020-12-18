@@ -2,7 +2,19 @@ package com.jetbrains;
 
 public class SecurityEmployee extends Security {
 
-    public static boolean reviewLoginEmployee(){
+    //lecture procedure to review the pin
+    public boolean login(String pinInput) {
+
+        if (pinInput.equals("A1234")) {
+            return true;
+        }
+
+        return false;
+    }
+
+   /* My procedure to review the pinEmployee
+
+   public static boolean reviewLoginEmployee(){
         boolean exit = false;
         int switchCaseE;
 
@@ -46,7 +58,7 @@ public class SecurityEmployee extends Security {
     @Override
     public boolean reviewLoginCustomer(String pinToReview) {
         return true;
-    }
+    } */
 }
 
 

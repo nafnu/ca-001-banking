@@ -2,7 +2,7 @@ package com.jetbrains;
 import java.util.Scanner;
 
 
-public class Customer extends Bank{
+public class Customer extends Bank {
 
     public static String name, surname, account, email, pin;
     public static char ch1, ch2;
@@ -62,9 +62,10 @@ public class Customer extends Bank{
         System.out.print("Please enter your PIN \t");
         pin = info.next();
 
-        SecurityCustomer.reviewLoginCustomer();
+        //SecurityCustomer.reviewLoginCustomer();
 
-        Customer customer = new Customer(name,surname,email);
+        Customer customer = new Customer(name, surname, email);
+        FileManager.AddCustomerToFile(customer);
         // And if happy /// create the customer
 
         return customer;
@@ -72,15 +73,15 @@ public class Customer extends Bank{
     }
 
 
-    public static int sumLength(){
-        int l1 = name.length()+surname.length();
-        return l1 ;
+    public static int sumLength() {
+        int l1 = name.length() + surname.length();
+        return l1;
     }
 
-    public static String getInitials(){
+    public static String getInitials() {
         String initialsName = String.valueOf(ch1);
         String initialsSurname = String.valueOf(ch2);
-        return initialsName+initialsSurname;
+        return initialsName + initialsSurname;
 
 
 
@@ -118,5 +119,6 @@ public class Customer extends Bank{
     }
 
  */
+    }
 }
 

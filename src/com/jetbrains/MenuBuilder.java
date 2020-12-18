@@ -41,6 +41,18 @@ public class MenuBuilder {
         return selectionC;
     }
 
+    static int transactionMenu() {
+
+        int selection;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--------------------------\n");
+        System.out.println("1 - Lodge Money");
+        System.out.println("1 - Withdraw Money");
+
+        selection = scanner.nextInt();
+        return selection;
+    }
 
 
 }

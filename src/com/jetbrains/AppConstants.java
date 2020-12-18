@@ -11,6 +11,6 @@ public class AppConstants {
     static final int TRANSACTION_WITHDRAW = 2;
 
     static final int EMPLOYEE = 1;
-
+    
     static final int QUIT = 3;
 }
