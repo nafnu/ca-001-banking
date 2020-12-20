@@ -1,3 +1,7 @@
+//21520 Nathalie Flores
+//21520@student.dorset-college.ie
+
+
 package com.jetbrains;
 import java.util.Scanner;
 
@@ -6,6 +10,8 @@ public class Customer extends Bank {
 
     public static String name, surname, account, email, pin;
     public static char ch1, ch2;
+    CurrentAccount	ca;
+    SavingsAccount	sa;
     public static Scanner info = new Scanner(System.in);
 
     public Customer(String _name, String _surname, String _email) {
@@ -15,6 +21,8 @@ public class Customer extends Bank {
         account = pinValidation(false);
         pin = pinValidation(true);
 
+        ca = new CurrentAccount(account);
+        sa = new SavingsAccount(account);
 
     }
 
@@ -54,7 +62,7 @@ public class Customer extends Bank {
         surname = info.next().toLowerCase();
 
         System.out.print("Please enter your account number \t");
-        account = info.next().toLowerCase() + info.nextLine();
+        account2 = info.next().toLowerCase() + info.nextLine();
 
         System.out.print("Please enter your email \t");
         email = info.next().toLowerCase() + info.nextLine();
@@ -82,8 +90,30 @@ public class Customer extends Bank {
         String initialsName = String.valueOf(ch1);
         String initialsSurname = String.valueOf(ch2);
         return initialsName + initialsSurname;
+    }
 
+    public void setAccount(String _account) {
+        account2 = _account;
+    }
+    public String getAccount() {
+        return account2;
+    }
 
+    public CurrentAccount getCurrentAccount() {
+        return currentAccount;
+    }
+
+    public void setCurrentAccount(CurrentAccount _currentAccount) {
+        currentAccount = _currentAccount;
+    }
+
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
+    }
+
+    public void setSavingsAccount(SavingsAccount _savingsAccount) {
+        savingsAccount = _savingsAccount;
+    }
 
 
 /* My own old procedure to ge the pin number. It is inefficient because I do duplicate operations for the first and last name.
@@ -119,6 +149,6 @@ public class Customer extends Bank {
     }
 
  */
-    }
+
 }
 

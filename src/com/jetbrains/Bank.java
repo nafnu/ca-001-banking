@@ -1,3 +1,8 @@
+//21520 Nathalie Flores
+//21520@student.dorset-college.ie
+
+
+
 package com.jetbrains;
 import java.util.Scanner;
 
@@ -48,7 +53,11 @@ public class Bank {
                                         Transactions btw = createTransactionWithdrawForm();
                                         BankingAction.CreateTransaction(btw);
                                         break;
+                                    default:
+                                        System.out.println("Transaction choice invalid");
                                 }
+
+                        } while (transactionChoice != 2);
 
                                 break;
                             case CUSTOMER_LIST:

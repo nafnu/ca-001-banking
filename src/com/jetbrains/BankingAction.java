@@ -1,3 +1,7 @@
+//21520 Nathalie Flores
+//21520@student.dorset-college.ie
+
+
 package com.jetbrains;
 
 public class BankingAction {
@@ -28,14 +32,17 @@ public class BankingAction {
 
 
     public static void CreateTransaction(Transactions transaction) {
-        System.out.println("Creating Transaction......");
+        if (transaction.customer != null) {
+            System.out.println(" value: " + transaction.amount + " account: " + transaction.customer.getAccount() + " type: " + transaction.typeTransaction + " ");
+
+            FileManager.AddTransactionToFile(transaction);
+        }
     }
 
 
-
-    public static void ListTransactionHistory() {
-
-    }
+    public static void ListTransactionHistory(String account2, int type)) {
+        FileManager.listTransactions(account, type);
+       }
 
     public static void Lodge() {
 
@@ -47,7 +54,7 @@ public class BankingAction {
 
 
     public static void listCustomers() {
-
+            FileManager.ListCustomers();
     }
 
 

@@ -1,3 +1,7 @@
+//21520 Nathalie Flores
+//21520@student.dorset-college.ie
+
+
 package com.jetbrains;
 import java.util.Scanner;
 import java.util.ArrayList;
